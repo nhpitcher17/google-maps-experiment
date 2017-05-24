@@ -32,7 +32,7 @@ function initMap() {
   // The photograph is courtesy of the U.S. Geological Survey.
   var srcImage = '/Users/user/test/google_maps_experiment/images/crime.png';
 
-/*  var directionsService = new google.maps.DirectionsService;
+var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer({
     draggable: true,
     map: map,
@@ -43,9 +43,9 @@ function initMap() {
     computeTotalDistance(directionsDisplay.getDirections());
   });
 
-  displayRoute('Boulder, CO', 'Boulder Public Library, CO', directionsService,
+  displayRoute('North Boulder, CO', 'Table Mesa, CO', directionsService,
     directionsDisplay);
-*/
+
   overlay = new USGSOverlay(bounds, srcImage, map);
 }
 
@@ -169,7 +169,7 @@ USGSOverlay.prototype.toggle = function() {
 // Detach the map from the DOM via toggleDOM().
 // Note that if we later reattach the map, it will be visible again,
 // because the containing <div> is recreated in the overlay's onAdd() method.
-USGSOverlay.prototype.toggleDOM = function() {
+/*USGSOverlay.prototype.toggleDOM = function() {
   if (this.getMap()) {
     // Note: setMap(null) calls OverlayView.onRemove()
     this.setMap(null);
@@ -177,5 +177,5 @@ USGSOverlay.prototype.toggleDOM = function() {
     this.setMap(this.map_);
   }
 };
-
+*/
 google.maps.event.addDomListener(window, 'load', initMap);
